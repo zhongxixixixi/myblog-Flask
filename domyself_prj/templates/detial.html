@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}登录{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detial.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div class="body2">
+        <h4 class="page-title">{{ question.title }}</h4>
+        <p class="info2">
+            <span class="author">作者：{{ question.author.username }}</span>
+            <span class="create_time">时间：{{ question.create_time }}</span>
+        </p>
+        <p>{{ question.content }}</p>
+    </div>
+    <hr>
+    <form action="{{ url_for('comment') }}" method="post">
+        <h4>评论：({{ count }})</h4>
+        <div class="body3">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="请输入评论" name="d-content">
+                <input type="hidden" value="{{ question.id }}" name="d-qid">
+            </div>
+            <div class="button">
+                <button class="btn btn-primary">立即评论</button>
+            </div>
+        </div>
+    </form>
+    <ul>
+        {% for comment in question.comments %}
+            <li class="body4">
+                <div class="avater-group">
+                    <img class="avater" src="{{ url_for('static', filename='img/figure.jpg') }}" alt="">
+                    <span class="author">{{ comment.author.username }}</span>
+                    <span class="create_time">{{ comment.create_time }}</span>
+                </div>
+                <p class="content">{{ comment.content }}</p>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock %}

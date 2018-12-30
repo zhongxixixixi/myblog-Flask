@@ -1,0 +1,34 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+ul li{
+    overflow: hidden;
+}
+
+.avater{
+    width: 38px;
+    height: 38px;
+    float: left;
+}
+
+.body1{
+    width: 600px;
+    float: left;
+    margin-left: 10px;
+}
+
+.title a{
+    color: darkturquoise;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.info1{
+    text-align: right;
+}
+
+.info1 .create_time{
+    margin-left: 10px;
+}

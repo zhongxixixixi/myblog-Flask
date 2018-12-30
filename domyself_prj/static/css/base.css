@@ -1,0 +1,19 @@
+.body{
+    background: #f3f3f3;
+}
+
+.logo{
+    height: 24px;
+}
+
+.main{
+    background: #fff;
+    width: 730px;
+    margin: 0 auto;
+}
+
+.page-title{
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
